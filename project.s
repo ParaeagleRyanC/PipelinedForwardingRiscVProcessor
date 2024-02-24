@@ -3,7 +3,6 @@
 # project.s
 #
 # Author: Ryan Chiang
-# Class: ECEn 323, Section 1, Winter 2023
 # Date: 04/15/2023
 #
 # Description:
