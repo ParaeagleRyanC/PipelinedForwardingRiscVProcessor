@@ -4,7 +4,6 @@
 * File: alu.sv
 *
 * Author: Ryan Chiang
-* Class: ECEN 323, Winter Semester 2023
 * Date: 01/17/2023
 *
 * Module: alu
