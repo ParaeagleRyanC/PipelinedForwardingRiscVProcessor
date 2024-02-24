@@ -1,0 +1,53 @@
+#####################################################################################
+#
+# instructions.txt
+#
+# Author: Ryan Chiang
+# Class: ECEn 323, Section 1, Winter 2023
+# Date: 04/15/2023
+#
+# Description:
+#	This file provides instuctions as to how to set up the project and how the game works.
+#
+######################################################################################
+
+How the game works:
+	This program is the final project for the class. 
+	This represents the "eliminate-invaders" game.
+	Russians have invaded Ukraine.
+	A total of 8 invaders are scattered across the screen.
+	'PT' stands for Putin. 'Z', 'theta', and 'stars' as Russian invaders. 
+	You start off at the top left corner as a 'hammer'.
+	At the bottom right of the screen is a comrade of yours that you are to safe.
+	You eliminate the enemies and safe your friend by simply going over the symbols.
+	You are to work your way around the map and eliminate ALL invaders
+	before you can safe your friend. In other words, going to your friend
+	prior to all enemies are eliminated will not work.
+	As an enemy is eliminated, a tomb stone with a cross will be placesd at the location.
+	The seven-segment will display the current number of invaders you have eliminated.
+	The LEDs will lit up as you successfully save your comrade.
+	The game is restarted upon a BTNC press or when you have saved your comrade.
+	You can control movement by pressing the four directional buttons.
+	
+Number of instructions used: 142
+Number of additional fonts created and used: 7 
+
+How to set up:
+1) Open up a terminal on your machine
+2) Enter vivado environment
+3) Execute the following command to update font (be sure to have a working checkpoint in place of final_io.dcp)
+vivado -mode batch -source ../resources/load_mem.tcl -tclargs updateFont final_io.dcp project_font.txt project_font.bit project_font.dcp
+4) Execute the following command to create project_background.mem file
+python3 ../resources/generate_background.py project_background.txt project_background.mem
+5) Execute the following command to update background
+vivado -mode batch -source ../resources/load_mem.tcl -tclargs updateBackground project_font.dcp project_background.mem project_background.bit project_background.dcp
+6) Execute the following command to update memory files in preparation for generating bit stream file
+java -jar ../resources/rars1_4.jar mc CompactTextAtZero a \
+  dump .text HexText project_text.mem \
+  dump .data HexText project_data.mem \
+  dump .text SegmentWindow project_s.txt \
+  project.s
+7) Execute the following command to generate bit stream file
+vivado -mode batch -source ../resources/load_mem.tcl -tclargs updateMem project_background.dcp project_text.mem project_data.mem project_game.bit
+8) In a new terminal without vivado environment, execute the following command to program your FPGA board.
+python3 ../resources/openocd.py project_game.bit
