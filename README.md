@@ -9,7 +9,7 @@ Various hazards are properly detected and handled in order to ensure a successfu
 
 The processor utilizes the ALU (Arithmetic Logic Unit) and RegisterFile modules. 
 
-A game is designed and implemented in `Assembly Language` to highlight the functionalities of the processor.
+A game is designed and implemented in `Assembly Language` to highlight the functionalities of the processor, and is to be run on an FPGA board with a VGA output.
 
 This is a **5-stage** processor, with the stages being:
 1. Fetch
@@ -18,7 +18,7 @@ This is a **5-stage** processor, with the stages being:
 4. Memory
 5. Write Back
 
-This processor follows the `RISC-V Instruction Set Manual and supports basics instructions.
+This processor follows the `RISC-V Instruction Set Manual` and supports basics instructions.
 * Register-Register: add, sub, and, or, xor, slt, sll, srl, sra
 * ALU Immediate: addi, andi, ori, xori, slti, slli, srli, srai, lui
 * Memory: lw, sw
