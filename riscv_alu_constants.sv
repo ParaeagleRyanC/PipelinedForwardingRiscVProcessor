@@ -3,10 +3,7 @@
 * File: riscv_alu_constants.sv
 *
 * Author: Ryan Chiang
-* Class: ECEN 323, Winter Semester 2023
 * Date: 02/27/2023
-*
-* Module: riscv_alu_constants
 *
 * Description:
 *    This .sv file contains the constants that are used across various modules.
