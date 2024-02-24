@@ -4,7 +4,6 @@
 * File: regfile.sv
 *
 * Author: Ryan Chiang
-* Class: ECEN 323, Winter Semester 2023
 * Date: 01/23/2023
 *
 * Module: regfile
