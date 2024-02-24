@@ -3,10 +3,7 @@
 * File: riscv_datapath_constants.sv
 *
 * Author: Ryan Chiang
-* Class: ECEN 323, Winter Semester 2023
 * Date: 02/06/2023
-*
-* Module: riscv_datapath_constants
 *
 * Description:
 *    This .sv file contains the constants related to 
