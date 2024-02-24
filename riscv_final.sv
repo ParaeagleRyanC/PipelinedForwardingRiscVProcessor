@@ -4,7 +4,6 @@
 * File: riscv_final.sv
 *
 * Author: Ryan Chiang
-* Class: ECEN 323, Winter Semester 2023
 * Date: 03/27/2023
 *
 * Module: riscv_final
